@@ -19,6 +19,11 @@ export default function Header({ onModalOpen }: HeaderProps) {
       onModalOpen(modalId, tab);
     }
     
+    // Close mobile menu when opening modals
+    if (modalId === 'account-page' || modalId === 'my-page') {
+      setMobileMenuOpen(false);
+    }
+    
     // Handle login and register modals
     if (modalId === 'login') {
       setIsRegisterModalOpen(false);
