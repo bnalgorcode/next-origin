@@ -51,7 +51,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }: Logi
           transition: 'max-height 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)',
           transform: isOpen ? 'perspective(1000px) rotateX(0) scale(1)' : 'perspective(1000px) rotateX(-10deg) scale(0.95)',
           transformOrigin: 'top center',
-          backgroundImage: 'url(/images/bg/modal-bg2.png)',
+          backgroundImage: 'url(/images/bg/modal-bg.png)',
           backgroundSize: '100% auto',
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center top',
@@ -61,7 +61,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }: Logi
         <div className="flex justify-end p-3 md:p-4 border-b border-gray-700">
           <div className="flex flex-col items-center justify-center flex-1">
             <Image 
-              src="/images/main/logo2.png" 
+              src="/images/main/logo.png" 
               alt="Logo" 
               width={180}
               height={90}
@@ -83,27 +83,27 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }: Logi
               <label className="block text-gray-300 mb-2 text-sm md:text-base">UserID</label>
               <input 
                 type="text" 
-                className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
+                className="px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] w-full text-sm md:text-base"
               />
             </div>
             <div className="mb-6">
               <label className="block text-gray-300 mb-2 text-sm md:text-base">Password</label>
               <input 
                 type="password" 
-                className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
+                className="px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] w-full text-sm md:text-base"
               />
             </div>
             <div className="mx-auto px-2 md:px-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 mt-4">
               <button 
                 type="submit" 
-                className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base flex-1 sm:flex-none"
+                className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] text-sm md:text-base flex-1 sm:flex-none"
               >
                 Login
               </button>
               <button 
                 type="button" 
                 onClick={onSwitchToRegister}
-                className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base flex-1 sm:flex-none"
+                className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] text-sm md:text-base flex-1 sm:flex-none"
               >
                 Register
               </button>

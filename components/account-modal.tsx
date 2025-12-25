@@ -83,7 +83,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
           transition: 'max-height 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)',
           transform: isOpen ? 'perspective(1000px) rotateX(0) scale(1)' : 'perspective(1000px) rotateX(-10deg) scale(0.95)',
           transformOrigin: 'top center',
-          backgroundImage: 'url(/images/bg/modal-bg2.png)',
+          backgroundImage: 'url(/images/bg/modal-bg.png)',
           backgroundSize: '100% auto',
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center top',
@@ -108,7 +108,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
                 onClick={() => onTabChange(tab.id)}
                 className={`flex-1 py-4 px-2 transition-colors ${
                   activeTab === tab.id
-                    ? 'text-[#33e1ea] border-b-2 border-[#33e1ea]'
+                    ? 'text-[#c233ea] border-b-2 border-[#c233ea]'
                     : 'hover:text-gray-300'
                 }`}
               >

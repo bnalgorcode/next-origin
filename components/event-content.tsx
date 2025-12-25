@@ -44,10 +44,10 @@ export default function EventContent() {
         <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] cursor-not-allowed opacity-50 text-xs md:text-sm">
           <i className="fa fa-angle-left"></i>
         </button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#33e1ea] text-white font-semibold text-xs md:text-sm">1</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#0b8dad] hover:text-white transition-colors text-xs md:text-sm">2</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#0b8dad] hover:text-white transition-colors text-xs md:text-sm">3</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#0b8dad] hover:text-white transition-colors text-xs md:text-sm">
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#c233ea] text-white font-semibold text-xs md:text-sm">1</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">2</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">3</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">
           <i className="fa fa-angle-right"></i>
         </button>
       </div>

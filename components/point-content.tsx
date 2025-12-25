@@ -45,7 +45,7 @@ export default function PointContent() {
               type="text"
               value={pointAmount}
               onChange={(e) => setPointAmount(e.target.value)}
-              className="w-full sm:w-auto px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] text-sm md:text-base"
+              className="w-full sm:w-auto px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] text-sm md:text-base"
               placeholder="0"
             />
             <button
@@ -83,7 +83,7 @@ export default function PointContent() {
           <select
             value={selectedBonus}
             onChange={(e) => setSelectedBonus(e.target.value)}
-            className="w-full px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] text-sm md:text-base"
+            className="w-full px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] text-sm md:text-base"
           >
             <option>no data</option>
             <option>no data</option>
@@ -95,7 +95,7 @@ export default function PointContent() {
       <div className="mx-auto px-2 md:px-4 flex items-center justify-center gap-1 mt-4">
         <button
           type="submit"
-          className="w-full sm:w-auto bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base"
+          className="w-full sm:w-auto bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] text-sm md:text-base"
         >
           Profile/Apply Deposit
         </button>

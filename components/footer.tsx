@@ -47,11 +47,11 @@ export default function Footer({ onModalOpen }: FooterProps) {
         <div className="container mx-auto px-1 lg:px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {/* Notice section */}
-            <div className="border-2 border-[#b5f4fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
+            <div className="border-2 border-[#e2b5fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
               <div className="h-[6px] bg-gradient-to-r from-[#b5dbfe] via-[#fed9fe] to-[#568abe]"></div>
               <div className="p-3">
                 <h2 className="text-xl font-bold mb-4 items-center text-center">
-                  <i className="fa fa-bullhorn text-[#33e1ea] mr-2"></i>Notice
+                  <i className="fa fa-bullhorn text-[#c233ea] mr-2"></i>Notice
                 </h2>
                 <div className="space-y-0">
                   {noticeItems.map((item, index) => (
@@ -62,7 +62,7 @@ export default function Footer({ onModalOpen }: FooterProps) {
                     >
                       <a 
                         href="#" 
-                        className="text-gray-300 max-w-[70%] truncate text-sm transition-colors duration-150 group-hover:text-[#33e1ea]"
+                        className="text-gray-300 max-w-[70%] truncate text-sm transition-colors duration-150 group-hover:text-[#c233ea]"
                       >
                         {item.text}
                       </a>
@@ -74,7 +74,7 @@ export default function Footer({ onModalOpen }: FooterProps) {
                 </div>
                 <a 
                   href="#" 
-                  className="text-[#33e1ea] flex items-center justify-end mt-4 hover:underline"
+                  className="text-[#c233ea] flex items-center justify-end mt-4 hover:underline"
                 >
                   MORE <i className="fa fa-angle-right ml-1"></i>
                 </a>
@@ -82,11 +82,11 @@ export default function Footer({ onModalOpen }: FooterProps) {
             </div>
 
             {/* Event section */}
-            <div className="border-2 border-[#b5f4fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
+            <div className="border-2 border-[#e2b5fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
               <div className="h-[6px] bg-gradient-to-r from-[#b5dbfe] via-[#fed9fe] to-[#568abe]"></div>
               <div className="p-3">
                 <h2 className="text-xl font-bold mb-4 items-center text-center">
-                  <i className="fa fa-gift text-[#33e1ea] mr-2"></i>Event
+                  <i className="fa fa-gift text-[#c233ea] mr-2"></i>Event
                 </h2>
                 <div className="space-y-0">
                   {eventItems.map((item, index) => (
@@ -97,7 +97,7 @@ export default function Footer({ onModalOpen }: FooterProps) {
                     >
                       <a 
                         href="#" 
-                        className="text-gray-300 max-w-[70%] truncate text-sm transition-colors duration-150 group-hover:text-[#33e1ea]"
+                        className="text-gray-300 max-w-[70%] truncate text-sm transition-colors duration-150 group-hover:text-[#c233ea]"
                       >
                         {item.text}
                       </a>
@@ -109,7 +109,7 @@ export default function Footer({ onModalOpen }: FooterProps) {
                 </div>
                 <a 
                   href="#" 
-                  className="text-[#33e1ea] flex items-center justify-end mt-4 hover:underline"
+                  className="text-[#c233ea] flex items-center justify-end mt-4 hover:underline"
                 >
                   MORE <i className="fa fa-angle-right ml-1"></i>
                 </a>
@@ -117,11 +117,11 @@ export default function Footer({ onModalOpen }: FooterProps) {
             </div>
 
             {/* Real-time section */}
-            <div className="border-2 border-[#b5f4fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
+            <div className="border-2 border-[#e2b5fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
               <div className="h-[6px] bg-gradient-to-r from-[#b5dbfe] via-[#fed9fe] to-[#568abe]"></div>
               <div className="p-3">
                 <h2 className="text-xl font-bold mb-4 items-center text-center">
-                  <i className="fa fa-trophy text-[#33e1ea] mr-2"></i>Real-time
+                  <i className="fa fa-trophy text-[#c233ea] mr-2"></i>Real-time
                 </h2>
                 
                 <div className="h-[250px] overflow-hidden relative">
@@ -144,7 +144,7 @@ export default function Footer({ onModalOpen }: FooterProps) {
                             </span>
                           </div>
                           <div className="text-right">
-                            <div className="text-[#b5f4fe] text-base font-black">
+                            <div className="text-[#e2b5fe] text-base font-black">
                               {item.amount}
                             </div>
                             <div className="text-gray-500 text-xs">

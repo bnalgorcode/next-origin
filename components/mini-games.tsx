@@ -18,9 +18,9 @@ export default function MiniGames() {
       {miniGames.map((game, index) => (
         <div
           key={index}
-          className="relative w-full rounded-[10px] overflow-hidden transition-all duration-300 border border-[#b5f4fe] hover:scale-105 min-h-[220px] sm:min-h-[240px] md:min-h-[260px]"
+          className="relative w-full rounded-[10px] overflow-hidden transition-all duration-300 border border-[#e2b5fe] hover:scale-105 min-h-[220px] sm:min-h-[240px] md:min-h-[260px]"
           style={{
-            backgroundImage: 'url(/images/bg/game-card-bg2.png)',
+            backgroundImage: 'url(/images/bg/game-card-bg.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

@@ -72,19 +72,19 @@ export default function Header({ onModalOpen }: HeaderProps) {
             onClick={() => handleModalClick('account-page', 'deposit')}
             className="cursor-pointer"
           >
-            Balance<span className="text-[#33e1ea]"> $97,000</span> <i className="fa fa-refresh"></i>
+            Balance<span className="text-[#c233ea]"> $97,000</span> <i className="fa fa-refresh"></i>
           </span>
           <span 
             onClick={() => handleModalClick('account-page', 'point')}
             className="cursor-pointer"
           >
-            Points<span className="text-[#33e1ea]"> 80,000</span>P
+            Points<span className="text-[#c233ea]"> 80,000</span>P
           </span>
           <span 
             onClick={() => handleModalClick('account-page', 'withdraw')}
             className="cursor-pointer"
           >
-            Comps<span className="text-[#33e1ea]"> $100,000</span>
+            Comps<span className="text-[#c233ea]"> $100,000</span>
           </span>
         </div>
 
@@ -94,7 +94,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
           <div className="flex items-center justify-center md:justify-start">
             <a href="#" className="flex items-center">
               <Image 
-                src="/images/main/logo2.png" 
+                src="/images/main/logo.png" 
                 alt="ToTo Club Logo" 
                 width={200}
                 height={100}
@@ -108,32 +108,32 @@ export default function Header({ onModalOpen }: HeaderProps) {
           <nav className="hidden md:flex">
             <button 
               onClick={() => handleModalClick('account-page', 'deposit')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#b5f4fe]"
+              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
             >
               Deposit
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'withdraw')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#b5f4fe]"
+              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
             >
               Withdraw
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'point')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#b5f4fe]"
+              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
             >
               
               Point
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'notice')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#b5f4fe]"
+              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
             >
               Notice
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'event')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#b5f4fe]"
+              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
             >
               Event
             </button>
@@ -143,13 +143,13 @@ export default function Header({ onModalOpen }: HeaderProps) {
           <div className="hidden md:flex items-center space-x-3">
             <button 
               onClick={() => handleModalClick('login', 'login')}
-              className="border-2 border-[#33e1ea] px-6 py-3 rounded-sm font-black text-[#33e1ea] transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] hover:text-white"
+              className="border-2 border-[#c233ea] px-6 py-3 rounded-sm font-black text-[#c233ea] transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] hover:text-white"
             >
               Login
             </button>
             <button 
               onClick={() => handleModalClick('register', 'register')}
-              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+              className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]"
             >
               Register
             </button>
@@ -169,7 +169,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
 
         {/* Mobile menu */}
         <div className={`md:hidden ${mobileMenuOpen ? '' : 'hidden'} border-gray-800`} style={{
-          backgroundImage: 'url(/images/bg/modal-bg2.png)',
+          backgroundImage: 'url(/images/bg/modal-bg.png)',
           backgroundSize: '100% auto',
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center top'
@@ -177,17 +177,17 @@ export default function Header({ onModalOpen }: HeaderProps) {
           <div className="flex space-x-3 pt-2 border-t border-gray-800">
             <button 
               onClick={() => handleModalClick('login', 'login')}
-              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+              className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]"
             >
               Login
             </button>
             <button 
               onClick={() => handleModalClick('register', 'register')}
-              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+              className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]"
             >
               Register
             </button>
-            <button className="flex-1 border-2 border-[#33e1ea] px-6 py-3 rounded-sm font-black text-[#33e1ea] transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] hover:text-white">
+            <button className="flex-1 border-2 border-[#c233ea] px-6 py-3 rounded-sm font-black text-[#c233ea] transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] hover:text-white">
               Logout
             </button>
           </div>
@@ -254,7 +254,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
     {/* Banner pic */}
     <section className="w-full relative overflow-hidden">
       <Image 
-        src="/images/main/banner2.png" 
+        src="/images/main/banner1.png" 
         alt="Banner" 
         width={1920}
         height={400}

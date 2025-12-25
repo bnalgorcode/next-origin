@@ -3,12 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Blue theme colors */
-  --color1: #b5f4fe;
-  --color2: #33e1ea;
-  --color3: #0b8dad;
-  --color4: #04336d;
-  --color5: #021540;
+  /* Purple theme colors */
+  --color1: #e2b5fe;
+  --color2: #c233ea;
+  --color3: #710bad;
+  --color4: #47046d;
+  --color5: #2a0240;
 }
 
 @theme inline {
@@ -27,7 +27,7 @@
 }
 
 body {
-  background-image: url('/images/bg/bg2.png');
+  background-image: url('/images/bg/bg.png');
   background-size: 100% auto;
   background-repeat: repeat-y;
   background-position: center top;

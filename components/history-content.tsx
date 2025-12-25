@@ -24,8 +24,8 @@ export default function HistoryContent() {
           onClick={() => setActiveGameType('casino')}
           className={`px-2 md:px-3 py-1 md:py-1.5 rounded-sm font-black text-xs md:text-sm transition-all duration-300 ${
             activeGameType === 'casino'
-              ? 'bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d]'
-              : 'bg-black/60 border border-[#33e1ea]/50 hover:bg-[#33e1ea]/20'
+              ? 'bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d]'
+              : 'bg-black/60 border border-[#c233ea]/50 hover:bg-[#c233ea]/20'
           }`}
         >
           Casino
@@ -34,8 +34,8 @@ export default function HistoryContent() {
           onClick={() => setActiveGameType('slot')}
           className={`px-2 md:px-3 py-1 md:py-1.5 rounded-sm font-black text-xs md:text-sm transition-all duration-300 ${
             activeGameType === 'slot'
-              ? 'bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d]'
-              : 'bg-black/60 border border-[#33e1ea]/50 hover:bg-[#33e1ea]/20'
+              ? 'bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d]'
+              : 'bg-black/60 border border-[#c233ea]/50 hover:bg-[#c233ea]/20'
           }`}
         >
           Slot
@@ -44,8 +44,8 @@ export default function HistoryContent() {
           onClick={() => setActiveGameType('mini')}
           className={`px-2 md:px-3 py-1 md:py-1.5 rounded-sm font-black text-xs md:text-sm transition-all duration-300 ${
             activeGameType === 'mini'
-              ? 'bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d]'
-              : 'bg-black/60 border border-[#33e1ea]/50 hover:bg-[#33e1ea]/20'
+              ? 'bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d]'
+              : 'bg-black/60 border border-[#c233ea]/50 hover:bg-[#c233ea]/20'
           }`}
         >
           Mini
@@ -83,10 +83,10 @@ export default function HistoryContent() {
         <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] cursor-not-allowed opacity-50 text-xs md:text-sm">
           <i className="fa fa-angle-left"></i>
         </button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#33e1ea] text-white font-semibold text-xs md:text-sm">1</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#0b8dad] hover:text-white transition-colors text-xs md:text-sm">2</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#0b8dad] hover:text-white transition-colors text-xs md:text-sm">3</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#0b8dad] hover:text-white transition-colors text-xs md:text-sm">
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#c233ea] text-white font-semibold text-xs md:text-sm">1</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">2</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">3</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">
           <i className="fa fa-angle-right"></i>
         </button>
       </div>
