@@ -41,12 +41,13 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
       
       {/* Modal Content */}
       <div 
-        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full mx-2 md:mx-4 max-w-4xl overflow-hidden border border-gray-700 text-sm origin-top ${
+        className={`relative rounded-xl shadow-2xl w-full mx-2 md:mx-4 max-w-4xl overflow-hidden border border-gray-700 text-sm origin-top ${
           isOpen 
             ? 'opacity-100 max-h-[95vh]' 
             : 'opacity-0 max-h-0'
         }`}
         style={{
+          backgroundColor: 'rgb(8, 8, 8)',
           transition: 'max-height 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)',
           transform: isOpen ? 'perspective(1000px) rotateX(0) scale(1)' : 'perspective(1000px) rotateX(-10deg) scale(0.95)',
           transformOrigin: 'top center',

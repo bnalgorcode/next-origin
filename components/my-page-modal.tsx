@@ -1,22 +1,21 @@
 'use client';
 
 import { useEffect } from 'react';
-import DepositContent from './deposit-content';
-import WithdrawContent from './withdraw-content';
-import PointContent from './point-content';
-import NoticeContent from './notice-content';
-import EventContent from './event-content';
+import ProfileContent from './profile-content';
+import LetterContent from './letter-content';
+import QNAContent from './qna-content';
+import HistoryContent from './history-content';
 
-type TabType = 'deposit' | 'withdraw' | 'point' | 'notice' | 'event';
+type TabType = 'profile' | 'letter' | 'qna' | 'history';
 
-interface AccountModalProps {
+interface MyPageModalProps {
   isOpen: boolean;
   activeTab: TabType;
   onClose: () => void;
   onTabChange: (tab: TabType) => void;
 }
 
-export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }: AccountModalProps) {
+export default function MyPageModal({ isOpen, activeTab, onClose, onTabChange }: MyPageModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -30,27 +29,24 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
   }, [isOpen]);
 
   const tabs: { id: TabType; label: string }[] = [
-    { id: 'deposit', label: 'Deposit' },
-    { id: 'withdraw', label: 'Withdraw' },
-    { id: 'point', label: 'Point' },
-    { id: 'notice', label: 'Notice' },
-    { id: 'event', label: 'Event' },
+    { id: 'profile', label: 'My profile' },
+    { id: 'letter', label: 'Letter' },
+    { id: 'qna', label: 'QNA' },
+    { id: 'history', label: 'History' },
   ];
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'deposit':
-        return <DepositContent />;
-      case 'withdraw':
-        return <WithdrawContent />;
-      case 'point':
-        return <PointContent />;
-      case 'notice':
-        return <NoticeContent />;
-      case 'event':
-        return <EventContent />;
+      case 'profile':
+        return <ProfileContent />;
+      case 'letter':
+        return <LetterContent />;
+      case 'qna':
+        return <QNAContent />;
+      case 'history':
+        return <HistoryContent />;
       default:
-        return <DepositContent />;
+        return <ProfileContent />;
     }
   };
 

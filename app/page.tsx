@@ -8,14 +8,18 @@ import CasinoGames from "@/components/casino-games";
 import SlotGames from "@/components/slot-games";
 import MiniGames from "@/components/mini-games";
 import AccountModal from "@/components/account-modal";
+import MyPageModal from "@/components/my-page-modal";
 
 type GameCategory = 'casino' | 'slot' | 'mini';
 type AccountTab = 'deposit' | 'withdraw' | 'point' | 'notice' | 'event';
+type MyPageTab = 'profile' | 'letter' | 'qna' | 'history';
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<GameCategory>('casino');
   const [isAccountModalOpen, setIsAccountModalOpen] = useState(false);
   const [activeAccountTab, setActiveAccountTab] = useState<AccountTab>('deposit');
+  const [isMyPageModalOpen, setIsMyPageModalOpen] = useState(false);
+  const [activeMyPageTab, setActiveMyPageTab] = useState<MyPageTab>('profile');
 
   const handleModalOpen = (modalId: string, tab?: string) => {
     if (modalId === 'account-page' && tab) {
@@ -24,6 +28,12 @@ export default function Home() {
         : 'deposit';
       setActiveAccountTab(validTab);
       setIsAccountModalOpen(true);
+    } else if (modalId === 'my-page' && tab) {
+      const validTab = ['profile', 'letter', 'qna', 'history'].includes(tab)
+        ? (tab as MyPageTab)
+        : 'profile';
+      setActiveMyPageTab(validTab);
+      setIsMyPageModalOpen(true);
     }
   };
 
@@ -33,6 +43,14 @@ export default function Home() {
 
   const handleAccountTabChange = (tab: AccountTab) => {
     setActiveAccountTab(tab);
+  };
+
+  const handleMyPageModalClose = () => {
+    setIsMyPageModalOpen(false);
+  };
+
+  const handleMyPageTabChange = (tab: MyPageTab) => {
+    setActiveMyPageTab(tab);
   };
 
   return (
@@ -63,6 +81,14 @@ export default function Home() {
         activeTab={activeAccountTab}
         onClose={handleAccountModalClose}
         onTabChange={handleAccountTabChange}
+      />
+
+      {/* My Page Modal */}
+      <MyPageModal
+        isOpen={isMyPageModalOpen}
+        activeTab={activeMyPageTab}
+        onClose={handleMyPageModalClose}
+        onTabChange={handleMyPageTabChange}
       />
     </>
   );
