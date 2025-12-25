@@ -16,24 +16,24 @@ export default function LetterContent() {
       <div className="overflow-x-auto mb-4 mt-2 -mx-2 md:mx-0">
         <table className="min-w-full bg-black/40 text-xs md:text-sm">
           <thead>
-            <tr className="border-b border-gray-600/50">
-              <th className="px-2 md:px-4 py-2 md:py-3 text-left text-white font-bold">Number</th>
-              <th className="px-2 md:px-4 py-2 md:py-3 text-left text-white font-bold">Title</th>
-              <th className="px-2 md:px-4 py-2 md:py-3 text-left text-white font-bold">Date</th>
-              <th className="px-2 md:px-4 py-2 md:py-3 text-left text-white font-bold">Action</th>
+            <tr>
+              <th className="px-2 md:px-4 py-2 md:py-3 bg-[#1f2937] text-center font-semibold text-[#d1d5db] border-b border-[#374151]">Number</th>
+              <th className="px-2 md:px-4 py-2 md:py-3 bg-[#1f2937] text-center font-semibold text-[#d1d5db] border-b border-[#374151]">Title</th>
+              <th className="px-2 md:px-4 py-2 md:py-3 bg-[#1f2937] text-center font-semibold text-[#d1d5db] border-b border-[#374151]">Date</th>
+              <th className="px-2 md:px-4 py-2 md:py-3 bg-[#1f2937] text-center font-semibold text-[#d1d5db] border-b border-[#374151]">Action</th>
             </tr>
           </thead>
           <tbody>
             {letters.map((letter) => (
               <tr
                 key={letter.id}
-                className="border-b border-gray-600/30 hover:bg-black/60 transition-colors cursor-pointer"
+                className="border-b border-[#374151]/50 hover:bg-[#1f2937]/30 transition-colors cursor-pointer"
               >
-                <td className="px-2 md:px-4 py-2 md:py-3 text-white">{letter.id}</td>
-                <td className="px-2 md:px-4 py-2 md:py-3 text-white">{letter.title}</td>
-                <td className="px-2 md:px-4 py-2 md:py-3 text-white">{letter.date}</td>
-                <td className="px-2 md:px-4 py-2 md:py-3">
-                  <button className="text-red-400 hover:text-red-300 transition-colors">
+                <td className="px-2 md:px-4 py-2 md:py-3 text-white text-center">{letter.id}</td>
+                <td className="px-2 md:px-4 py-2 md:py-3 text-white text-center">{letter.title}</td>
+                <td className="px-2 md:px-4 py-2 md:py-3 text-white text-center">{letter.date}</td>
+                <td className="px-2 md:px-4 py-2 md:py-3 text-center">
+                  <button className="text-[#f87171] hover:text-[#ef4444] transition-colors px-1">
                     <i className="fa fa-trash"></i>
                   </button>
                 </td>

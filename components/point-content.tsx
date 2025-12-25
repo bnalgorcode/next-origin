@@ -50,25 +50,27 @@ export default function PointContent() {
             />
             <button
               onClick={() => handleAmountClick('MAX')}
-              className="px-2 md:px-3 py-1 md:py-1.5 bg-black/60 border border-[#33e1ea]/50 rounded-md hover:bg-[#33e1ea]/20 transition-colors text-xs md:text-sm w-full sm:w-auto"
+              className="px-3 md:px-5 py-2 md:py-2 bg-[#1f2937] border border-[#26395f] text-white cursor-pointer whitespace-nowrap flex-shrink-0 text-xs sm:text-sm md:text-base transition-colors hover:bg-[#374151] w-full sm:w-auto"
             >
               MAX
             </button>
           </div>
-          <div className="mt-2">
-            <div className="flex flex-wrap gap-2">
-              {amountButtons.map((amount) => (
+          <div className="mt-4">
+            <div className="flex flex-wrap w-full">
+              {amountButtons.map((amount, index) => (
                 <button
                   key={amount}
                   onClick={() => handleAmountClick(amount)}
-                  className="px-2 md:px-3 py-1 md:py-1.5 bg-black/60 border border-[#33e1ea]/50 rounded-md hover:bg-[#33e1ea]/20 transition-colors text-xs md:text-sm"
+                  className={`px-3 md:px-5 py-2 md:py-2 bg-[#1f2937] border border-[#26395f] text-white whitespace-nowrap flex-shrink-0 transition-colors hover:bg-[#374151] text-xs sm:text-sm md:text-base ${
+                    index === 0 ? 'rounded-l-md' : ''
+                  } ${index === amountButtons.length - 1 ? 'border-l-0' : 'border-l-0'}`}
                 >
                   {amount}
                 </button>
               ))}
               <button
                 onClick={() => handleAmountClick('Reset')}
-                className="px-2 md:px-3 py-1 md:py-1.5 bg-black/60 border border-[#33e1ea]/50 rounded-md hover:bg-[#33e1ea]/20 transition-colors text-xs md:text-sm"
+                className="px-3 md:px-5 py-2 md:py-2 bg-[#991b1b] border border-[#26395f] border-l-0 text-white whitespace-nowrap flex-shrink-0 transition-colors hover:bg-[#374151] rounded-r-md text-xs sm:text-sm md:text-base"
               >
                 Reset
               </button>
