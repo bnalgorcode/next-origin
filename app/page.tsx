@@ -40,14 +40,14 @@ export default function Home() {
       <Header onModalOpen={handleModalOpen} />
       
       {/* Game type tab section */}
-      <section className="py-8">
-        <div className="container mx-auto px-1 lg:px-5">
+      <section className="py-4 sm:py-6 md:py-8">
+        <div className="container mx-auto px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 max-w-full">
           <GameTabButtons 
             activeCategory={activeCategory}
             onCategoryChange={setActiveCategory}
           />
 
-          <div className="w-full mx-auto md:min-w-[1200px] overflow-x-auto">
+          <div className="w-full mx-auto">
             {activeCategory === 'casino' && <CasinoGames />}
             {activeCategory === 'slot' && <SlotGames />}
             {activeCategory === 'mini' && <MiniGames />}
