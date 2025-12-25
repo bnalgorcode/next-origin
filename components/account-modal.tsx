@@ -101,7 +101,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
 
         {/* Tabs - Desktop Only */}
         <div className="hidden md:block">
-          <div className="flex flex-wrap bg-black/40 font-[700]">
+          <div className="flex flex-wrap bg-black/40 font-bold">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
