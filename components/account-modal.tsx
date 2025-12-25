@@ -1,0 +1,124 @@
+'use client';
+
+import { useEffect } from 'react';
+import DepositContent from './deposit-content';
+import WithdrawContent from './withdraw-content';
+import PointContent from './point-content';
+import NoticeContent from './notice-content';
+import EventContent from './event-content';
+
+type TabType = 'deposit' | 'withdraw' | 'point' | 'notice' | 'event';
+
+interface AccountModalProps {
+  isOpen: boolean;
+  activeTab: TabType;
+  onClose: () => void;
+  onTabChange: (tab: TabType) => void;
+}
+
+export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }: AccountModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const tabs: { id: TabType; label: string }[] = [
+    { id: 'deposit', label: 'Deposit' },
+    { id: 'withdraw', label: 'Withdraw' },
+    { id: 'point', label: 'Point' },
+    { id: 'notice', label: 'Notice' },
+    { id: 'event', label: 'Event' },
+  ];
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'deposit':
+        return <DepositContent />;
+      case 'withdraw':
+        return <WithdrawContent />;
+      case 'point':
+        return <PointContent />;
+      case 'notice':
+        return <NoticeContent />;
+      case 'event':
+        return <EventContent />;
+      default:
+        return <DepositContent />;
+    }
+  };
+
+  return (
+    <div 
+      className={`fixed inset-0 z-50 flex items-center justify-center ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}
+      style={{
+        transition: 'opacity 0.5s ease, visibility 0.5s ease',
+      }}
+    >
+      {/* Backdrop */}
+      <div 
+        className={`absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-500 ease-in-out ${
+          isOpen ? 'opacity-100' : 'opacity-0'
+        }`}
+        onClick={onClose}
+      />
+      
+      {/* Modal Content */}
+      <div 
+        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full max-w-6xl overflow-hidden border border-gray-700 ${
+          isOpen 
+            ? 'opacity-100 max-h-[95vh]' 
+            : 'opacity-0 max-h-0'
+        }`}
+        style={{
+          transition: 'max-height 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)',
+          transform: isOpen ? 'perspective(1000px) rotateX(0) scale(1)' : 'perspective(1000px) rotateX(-10deg) scale(0.95)',
+          transformOrigin: 'top center',
+        }}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end p-2">
+          <button 
+            onClick={onClose}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            <i className="fa fa-times text-3xl"></i>
+          </button>
+        </div>
+
+        {/* Tabs - Desktop Only */}
+        <div className="hidden md:block">
+          <div className="flex flex-wrap bg-black/40 font-[700]">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                className={`flex-1 py-4 px-2 transition-colors ${
+                  activeTab === tab.id
+                    ? 'text-[#33e1ea] border-b-2 border-[#33e1ea]'
+                    : 'hover:text-gray-300'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-1 lg:p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
+          {renderContent()}
+        </div>
+      </div>
+    </div>
+  );
+}
+

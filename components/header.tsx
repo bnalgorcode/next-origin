@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import LoginModal from './login-modal';
+import RegisterModal from './register-modal';
 
 interface HeaderProps {
   onModalOpen?: (modalId: string, tab?: string) => void;
@@ -9,11 +11,37 @@ interface HeaderProps {
 
 export default function Header({ onModalOpen }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   const handleModalClick = (modalId: string, tab?: string) => {
     if (onModalOpen) {
       onModalOpen(modalId, tab);
     }
+    
+    // Handle login and register modals
+    if (modalId === 'login') {
+      setIsRegisterModalOpen(false);
+      setIsLoginModalOpen(true);
+    } else if (modalId === 'register') {
+      setIsLoginModalOpen(false);
+      setIsRegisterModalOpen(true);
+    }
+  };
+
+  const closeAllModals = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(false);
+  };
+
+  const switchToRegister = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(true);
+  };
+
+  const switchToLogin = () => {
+    setIsRegisterModalOpen(false);
+    setIsLoginModalOpen(true);
   };
 
   return (
@@ -228,6 +256,18 @@ export default function Header({ onModalOpen }: HeaderProps) {
         priority
       />
     </section>
+
+    {/* Modals */}
+    <LoginModal 
+      isOpen={isLoginModalOpen}
+      onClose={closeAllModals}
+      onSwitchToRegister={switchToRegister}
+    />
+    <RegisterModal 
+      isOpen={isRegisterModalOpen}
+      onClose={closeAllModals}
+      onSwitchToLogin={switchToLogin}
+    />
     </>
   );
 }
