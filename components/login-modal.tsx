@@ -41,7 +41,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }: Logi
       
       {/* Modal Content */}
       <div 
-        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full max-w-md overflow-hidden border border-gray-700 text-sm origin-top ${
+        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full mx-2 md:mx-4 max-w-md overflow-hidden border border-gray-700 text-sm origin-top ${
           isOpen 
             ? 'opacity-100 max-h-[95vh]' 
             : 'opacity-0 max-h-0'
@@ -57,14 +57,14 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }: Logi
         }}
       >
         {/* Header */}
-        <div className="flex justify-end p-4 border-b border-gray-700">
-          <div className="flex flex-col items-center justify-center">
+        <div className="flex justify-end p-3 md:p-4 border-b border-gray-700">
+          <div className="flex flex-col items-center justify-center flex-1">
             <Image 
               src="/images/main/logo2.png" 
               alt="Logo" 
               width={180}
               height={90}
-              className="mx-auto w-[40%]"
+              className="mx-auto w-[40%] max-w-[180px]"
             />
           </div>
           <button 
@@ -76,33 +76,33 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }: Logi
         </div>
 
         {/* Content */}
-        <div className="p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
+        <div className="p-4 md:p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
           <div className="modal-tab-content">
             <div className="mb-4">
-              <label className="block text-gray-300 mb-2">UserID</label>
+              <label className="block text-gray-300 mb-2 text-sm md:text-base">UserID</label>
               <input 
                 type="text" 
-                className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-300 mb-2">Password</label>
+              <label className="block text-gray-300 mb-2 text-sm md:text-base">Password</label>
               <input 
                 type="password" 
-                className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
               />
             </div>
-            <div className="mx-auto px-4 flex items-center justify-center gap-1 mt-4">
+            <div className="mx-auto px-2 md:px-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 mt-4">
               <button 
                 type="submit" 
-                className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+                className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base flex-1 sm:flex-none"
               >
                 Login
               </button>
               <button 
                 type="button" 
                 onClick={onSwitchToRegister}
-                className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+                className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base flex-1 sm:flex-none"
               >
                 Register
               </button>

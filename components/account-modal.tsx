@@ -73,7 +73,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
       
       {/* Modal Content */}
       <div 
-        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full max-w-6xl overflow-hidden border border-gray-700 ${
+        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full mx-2 md:mx-4 max-w-6xl overflow-hidden border border-gray-700 ${
           isOpen 
             ? 'opacity-100 max-h-[95vh]' 
             : 'opacity-0 max-h-0'
@@ -85,12 +85,12 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
         }}
       >
         {/* Close Button */}
-        <div className="flex justify-end p-2">
+        <div className="flex justify-end p-2 md:p-4">
           <button 
             onClick={onClose}
             className="text-gray-400 hover:text-white transition-colors"
           >
-            <i className="fa fa-times text-3xl"></i>
+            <i className="fa fa-times text-2xl md:text-3xl"></i>
           </button>
         </div>
 
@@ -114,7 +114,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
         </div>
 
         {/* Content */}
-        <div className="p-1 lg:p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
+        <div className="p-2 md:p-4 lg:p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
           {renderContent()}
         </div>
       </div>

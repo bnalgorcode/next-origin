@@ -47,7 +47,7 @@ export default function Home() {
             onCategoryChange={setActiveCategory}
           />
 
-          <div className="min-w-[1200px] w-full mx-auto">
+          <div className="w-full mx-auto md:min-w-[1200px] overflow-x-auto">
             {activeCategory === 'casino' && <CasinoGames />}
             {activeCategory === 'slot' && <SlotGames />}
             {activeCategory === 'mini' && <MiniGames />}

@@ -14,7 +14,7 @@ const miniGames = [
 
 export default function MiniGames() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 lg:gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 lg:gap-3">
       {miniGames.map((game, index) => (
         <div
           key={index}

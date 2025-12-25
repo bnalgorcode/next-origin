@@ -41,7 +41,7 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
       
       {/* Modal Content */}
       <div 
-        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl overflow-hidden border border-gray-700 text-sm origin-top ${
+        className={`relative bg-gray-800 rounded-xl shadow-2xl w-full mx-2 md:mx-4 max-w-4xl overflow-hidden border border-gray-700 text-sm origin-top ${
           isOpen 
             ? 'opacity-100 max-h-[95vh]' 
             : 'opacity-0 max-h-0'
@@ -57,7 +57,7 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
         }}
       >
         {/* Header */}
-        <div className="flex justify-end p-4 border-b border-gray-700">
+        <div className="flex justify-end p-3 md:p-4 border-b border-gray-700">
           <div className="flex flex-col items-center justify-center w-full">
             <Image 
               src="/images/main/logo2.png" 
@@ -76,20 +76,20 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
         </div>
 
         {/* Content */}
-        <div className="p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
+        <div className="p-3 md:p-4 lg:p-6 max-h-[calc(90vh-120px)] overflow-y-auto">
           <div className="modal-tab-content grid grid-cols-1 md:grid-cols-2 gap-3">
             {/* Left Column */}
             <div>
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">UserID</label>
-                <div className="flex gap-2">
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">UserID</label>
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input 
                     type="text" 
-                    className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1"
+                    className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1 text-sm md:text-base"
                   />
                   <button 
                     type="button" 
-                    className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 py-2 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] w-[80px]"
+                    className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-3 md:px-4 py-2 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] w-full sm:w-[80px] text-sm md:text-base"
                   >
                     Check
                   </button>
@@ -97,15 +97,15 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Nickname</label>
-                <div className="flex gap-2">
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Nickname</label>
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input 
                     type="text" 
-                    className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1"
+                    className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1 text-sm md:text-base"
                   />
                   <button 
                     type="button" 
-                    className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 py-2 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] w-[80px]"
+                    className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-3 md:px-4 py-2 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] w-full sm:w-[80px] text-sm md:text-base"
                   >
                     Check
                   </button>
@@ -113,41 +113,41 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Password</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Password</label>
                 <input 
                   type="password" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Password2</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Password2</label>
                 <input 
                   type="password" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Saving Bank</label>
-                <div className="flex gap-2">
-                  <select className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-[100px]">
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Saving Bank</label>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <select className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full sm:w-[100px] text-sm md:text-base">
                     <option>SB</option>
                     <option selected>CK</option>
                     <option>CN</option>
                   </select>
                   <input 
                     type="text" 
-                    className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1"
+                    className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1 text-sm md:text-base"
                   />
                 </div>
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Holder Name</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Holder Name</label>
                 <input 
                   type="text" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
             </div>
@@ -155,15 +155,15 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
             {/* Right Column */}
             <div>
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Phone</label>
-                <div className="flex gap-2">
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Phone</label>
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input 
                     type="text" 
-                    className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1"
+                    className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] flex-1 text-sm md:text-base"
                   />
                   <button 
                     type="button" 
-                    className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 py-2 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] w-[100px]"
+                    className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-3 md:px-4 py-2 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] w-full sm:w-[100px] text-sm md:text-base"
                   >
                     SendSMS
                   </button>
@@ -171,61 +171,61 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Birthday</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Birthday</label>
                 <input 
                   type="date" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Security Pwd</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Security Pwd</label>
                 <input 
                   type="text" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Referral</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Referral</label>
                 <input 
                   type="text" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">Favourite items</label>
-                <div className="mt-2 h-[40px] flex items-center gap-6">
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">Favourite items</label>
+                <div className="mt-2 min-h-[40px] flex flex-wrap items-center gap-4 md:gap-6">
                   <label className="flex items-center cursor-pointer">
                     <input 
                       type="checkbox" 
-                      className="h-5 w-5 text-[#33e1ea] bg-gray-700 border-gray-600 rounded focus:ring-[#33e1ea]"
+                      className="h-4 w-4 md:h-5 md:w-5 text-[#33e1ea] bg-gray-700 border-gray-600 rounded focus:ring-[#33e1ea]"
                     />
-                    <span className="ml-2 text-gray-300">Casino</span>
+                    <span className="ml-2 text-gray-300 text-sm md:text-base">Casino</span>
                   </label>
                   <label className="flex items-center cursor-pointer">
                     <input 
                       type="checkbox" 
-                      className="h-5 w-5 text-[#33e1ea] bg-gray-700 border-gray-600 rounded focus:ring-[#33e1ea]"
+                      className="h-4 w-4 md:h-5 md:w-5 text-[#33e1ea] bg-gray-700 border-gray-600 rounded focus:ring-[#33e1ea]"
                     />
-                    <span className="ml-2 text-gray-300">Slot</span>
+                    <span className="ml-2 text-gray-300 text-sm md:text-base">Slot</span>
                   </label>
                   <label className="flex items-center cursor-pointer">
                     <input 
                       type="checkbox" 
-                      className="h-5 w-5 text-[#33e1ea] bg-gray-700 border-gray-600 rounded focus:ring-[#33e1ea]"
+                      className="h-4 w-4 md:h-5 md:w-5 text-[#33e1ea] bg-gray-700 border-gray-600 rounded focus:ring-[#33e1ea]"
                     />
-                    <span className="ml-2 text-gray-300">Mini</span>
+                    <span className="ml-2 text-gray-300 text-sm md:text-base">Mini</span>
                   </label>
                 </div>
               </div>
               
               <div className="mb-2">
-                <label className="block text-gray-300 mb-2">USDT Address</label>
+                <label className="block text-gray-300 mb-2 text-sm md:text-base">USDT Address</label>
                 <input 
                   type="text" 
-                  className="px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full"
+                  className="px-3 md:px-4 py-2 bg-black border border-[#33e1ea]/50 rounded-md focus:outline-none focus:border-[#33e1ea] w-full text-sm md:text-base"
                 />
               </div>
             </div>
@@ -245,17 +245,17 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }: Regi
           </div>
 
           {/* Buttons */}
-          <div className="mx-auto px-4 flex items-center justify-center gap-1 mt-4">
+          <div className="mx-auto px-2 md:px-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 mt-4">
             <button 
               type="button" 
               onClick={onSwitchToLogin}
-              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base flex-1 sm:flex-none"
             >
               Login
             </button>
             <button 
               type="submit" 
-              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d]"
+              className="bg-gradient-to-b from-[#33e1ea] via-[#0b8dad] to-[#04336d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#33e1ea] hover:via-[#0b8dad] hover:to-[#04336d] text-sm md:text-base flex-1 sm:flex-none"
             >
               Register
             </button>
