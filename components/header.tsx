@@ -122,7 +122,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
               onClick={() => handleModalClick('account-page', 'point')}
               className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#b5f4fe]"
             >
-              Cone002rr!
+              
               Point
             </button>
             <button 
