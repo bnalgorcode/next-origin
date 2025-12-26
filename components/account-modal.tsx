@@ -29,13 +29,18 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
     };
   }, [isOpen]);
 
-  const tabs: { id: TabType; label: string }[] = [
-    { id: 'deposit', label: 'Deposit' },
-    { id: 'withdraw', label: 'Withdraw' },
-    { id: 'point', label: 'Point' },
-    { id: 'notice', label: 'Notice' },
-    { id: 'event', label: 'Event' },
+  const tabs: { id: TabType; label: string; icon: string }[] = [
+    { id: 'deposit', label: 'Deposit', icon: 'fa-rocket' },
+    { id: 'withdraw', label: 'Withdraw', icon: 'fa-money-bill-wave' },
+    { id: 'point', label: 'Point', icon: 'fa-coins' },
+    { id: 'notice', label: 'Notice', icon: 'fa-bullhorn' },
+    { id: 'event', label: 'Event', icon: 'fa-gift' },
   ];
+
+  const getTitle = (): string => {
+    const currentTab = tabs.find(tab => tab.id === activeTab);
+    return currentTab?.label || 'Deposit';
+  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -73,7 +78,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
       
       {/* Modal Content */}
       <div 
-        className={`relative rounded-xl shadow-2xl w-full mx-2 md:mx-4 max-w-6xl overflow-hidden border border-gray-700 ${
+        className={`relative rounded-xl shadow-2xl w-full mx-2 md:mx-10 max-w-7xl overflow-hidden border border-[#993336] ${
           isOpen 
             ? 'opacity-100 max-h-[95vh]' 
             : 'opacity-0 max-h-0'
@@ -99,22 +104,57 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
           </button>
         </div>
 
-        {/* Tabs - Desktop Only */}
-        <div className="hidden md:block">
-          <div className="flex flex-wrap bg-black/40 font-bold">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => onTabChange(tab.id)}
-                className={`flex-1 py-4 px-2 transition-colors ${
-                  activeTab === tab.id
-                    ? 'text-[#c233ea] border-b-2 border-[#c233ea]'
-                    : 'hover:text-gray-300'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        {/* Title */}
+        <div className="text-center px-4 pb-2">
+          <h2 className="text-2xl md:text-3xl font-medium text-white">
+            {getTitle()}
+          </h2>
+        </div>
+
+        {/* Tabs */}
+        <div className="mt-4">
+          <div className="flex justify-center gap-1 flex-wrap p-4 md:gap-8">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => onTabChange(tab.id)}
+                  className={`group relative w-[65px] md:w-[80px] aspect-square rounded-full flex flex-col items-center justify-center transition-all duration-300 border border-[#9c3535] ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-[#ff9494]'
+                  }`}
+                  style={{
+                    ...(isActive ? {
+                      backgroundImage: 'linear-gradient(rgba(242, 92, 92, 0.5), rgba(37, 12, 12, 0.3), rgba(27, 7, 7, 0.1), rgba(27, 7, 7, 0.1))'
+                    } : {})
+                  }}
+                >
+                  <div 
+                    className="absolute inset-[3px] rounded-full -z-10 transition-all duration-300"
+                    style={{
+                      borderTop: '1px solid #ff9494',
+                      backgroundImage: isActive 
+                        ? 'linear-gradient(rgba(242, 92, 92, 0.5), rgba(37, 12, 12, 0.3), rgba(27, 7, 7, 0.1), rgba(27, 7, 7, 0.1))'
+                        : 'linear-gradient(rgba(242, 92, 92, 0.5), rgba(189, 75, 75, 0.3), rgba(89, 24, 24, 0.1), rgba(60, 17, 17, 0.2), rgba(183, 80, 80, 0.3))'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.backgroundImage = 'linear-gradient(rgba(242, 92, 92, 0.5), rgba(37, 12, 12, 0.3), rgba(27, 7, 7, 0.1), rgba(27, 7, 7, 0.1))';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.backgroundImage = 'linear-gradient(rgba(242, 92, 92, 0.5), rgba(189, 75, 75, 0.3), rgba(89, 24, 24, 0.1), rgba(60, 17, 17, 0.2), rgba(183, 80, 80, 0.3))';
+                      }
+                    }}
+                  />
+                  <i className={`fa ${tab.icon} text-[0.75rem] md:text-[1.25rem] mb-1`}></i>
+                  <span className="text-[0.75rem] leading-none">{tab.label}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 

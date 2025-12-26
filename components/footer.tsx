@@ -12,22 +12,6 @@ export default function Footer({ onModalOpen }: FooterProps) {
     }
   };
 
-  const noticeItems = [
-    { text: 'New Match:Barceiona Vs Real Madridna Vs Real Madrid', date: '2025-7-31' },
-    { text: 'Laker vs Celtics Just Added!', date: '2025-8-15' },
-    { text: '🏏 India vs Pakistan: High-Stakes Clash!', date: '2025-8-20' },
-    { text: 'New Match:Barceiona Vs Real Madridna Vs Real Madrid', date: '2025-8-21' },
-    { text: 'Laker vs Celtics Just Added!', date: '2025-8-23' },
-  ];
-
-  const eventItems = [
-    { text: 'Laker vs Celtics Just Added!', date: '2025-8-15' },
-    { text: '🏏 India vs Pakistan: High-Stakes Clash!', date: '2025-8-20' },
-    { text: 'New Match:Barceiona Vs Real Madridna Vs Real Madrid', date: '2025-8-21' },
-    { text: 'Laker vs Celtics Just Added!', date: '2025-8-23' },
-    { text: 'New Match:Barceiona Vs Real Madridna Vs Real Madrid', date: '2025-9-21' },
-  ];
-
   const realtimeItems = [
     { name: 'Kex***t', status: 'Deposit', amount: '800,000', time: '08:45:22', statusClass: 'bg-green-900/30 text-green-400' },
     { name: 'Pt***m', status: 'Withdraw', amount: '100,000,000', time: '08:45:50', statusClass: 'bg-red-700/30 text-red-300' },
@@ -44,37 +28,95 @@ export default function Footer({ onModalOpen }: FooterProps) {
   return (
     <>
       <section className="py-12">
-        <div className="container mx-auto px-1 lg:px-4">
+        <div className="sm:px-14 md:px-22 lg:px-29 mx-auto px-1">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {/* Notice section */}
-            <div className="border-2 border-[#e2b5fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
-              <div className="h-[6px] bg-gradient-to-r from-[#b5dbfe] via-[#fed9fe] to-[#568abe]"></div>
-              <div className="p-3">
-                <h2 className="text-xl font-bold mb-4 items-center text-center">
-                  <i className="fa fa-bullhorn text-[#c233ea] mr-2"></i>Notice
+            <div className="relative shadow-sm rounded-b-lg opacity-90" style={{
+              background: '#0a0a0a',
+              border : "3px solid transparent",
+              borderImage: "linear-gradient(to bottom, #333333, #33150a) 1",
+              borderRadius: "0 0 15px 15px",
+            }}> 
+              <div className="p-8 bg-black/80 rounded-b-[5px]">
+                <h2 className="text-2xl font-bold mb-7 text-center text-white">
+                  <i className="fa fa-bullhorn text-[#e82525] mr-2"></i>Notice
                 </h2>
                 <div className="space-y-0">
-                  {noticeItems.map((item, index) => (
-                    <div 
-                      key={index}
-                      onClick={() => handleModalClick('notice-page', 'notice')}
-                      className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer group"
+                  <div 
+                    onClick={() => handleModalClick('notice-page', 'notice')}
+                    className="flex justify-between items-center pt-2 pb-2 last:border-b-0 cursor-pointer"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
                     >
-                      <a 
-                        href="#" 
-                        className="text-gray-300 max-w-[70%] truncate text-sm transition-colors duration-150 group-hover:text-[#c233ea]"
-                      >
-                        {item.text}
-                      </a>
-                      <span className="text-gray-500 text-sm whitespace-nowrap ml-2">
-                        {item.date}
-                      </span>
-                    </div>
-                  ))}
+                      New Match:Barceiona Vs Real Madridna Vs Real Madrid
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-7-31
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('notice-page', 'notice')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[0.9rem]"
+                    >
+                      Laker vs Celtics Just Added!
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-15
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('notice-page', 'notice')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
+                    >
+                      🏏 India vs Pakistan: High-Stakes Clash!
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-20
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('notice-page', 'notice')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
+                    >
+                      New Match:Barceiona Vs Real Madridna Vs Real Madrid
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-21
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('notice-page', 'notice')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
+                    >
+                      Laker vs Celtics Just Added!
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-23
+                    </span>
+                  </div>
                 </div>
                 <a 
                   href="#" 
-                  className="text-[#c233ea] flex items-center justify-end mt-4 hover:underline"
+                  onClick={() => handleModalClick('account-page', 'notice')}
+                  className="text-[#ea3333] flex items-center justify-end mt-4 hover:underline"
                 >
                   MORE <i className="fa fa-angle-right ml-1"></i>
                 </a>
@@ -82,34 +124,90 @@ export default function Footer({ onModalOpen }: FooterProps) {
             </div>
 
             {/* Event section */}
-            <div className="border-2 border-[#e2b5fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
-              <div className="h-[6px] bg-gradient-to-r from-[#b5dbfe] via-[#fed9fe] to-[#568abe]"></div>
-              <div className="p-3">
-                <h2 className="text-xl font-bold mb-4 items-center text-center">
-                  <i className="fa fa-gift text-[#c233ea] mr-2"></i>Event
+            <div className="relative shadow-sm rounded-b-lg opacity-90" style={{
+              background: '#0a0a0a',
+              border : "3px solid #3b3737",
+            }}>
+              <div className="p-8 bg-black/80 rounded-b-[5px]">
+                <h2 className="text-2xl font-bold mb-7 text-center text-white">
+                  <i className="fa fa-gift text-[#ea3333] mr-2"></i>Event
                 </h2>
                 <div className="space-y-0">
-                  {eventItems.map((item, index) => (
-                    <div 
-                      key={index}
-                      onClick={() => handleModalClick('event-page', 'event')}
-                      className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer group"
+                  <div 
+                    onClick={() => handleModalClick('event-page', 'event')}
+                    className="flex justify-between items-center pt-2 pb-2  border- last:border-b-0 cursor-pointer text-[1rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
                     >
-                      <a 
-                        href="#" 
-                        className="text-gray-300 max-w-[70%] truncate text-sm transition-colors duration-150 group-hover:text-[#c233ea]"
-                      >
-                        {item.text}
-                      </a>
-                      <span className="text-gray-500 text-sm whitespace-nowrap ml-2">
-                        {item.date}
-                      </span>
-                    </div>
-                  ))}
+                      Laker vs Celtics Just Added!
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-15
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('event-page', 'event')}
+                    className="flex justify-between items-center pt-2 pb-2 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[0.9rem]"
+                    >
+                      🏏 India vs Pakistan: High-Stakes Clash!
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-20
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('event-page', 'event')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
+                    >
+                      New Match:Barceiona Vs Real Madridna Vs Real Madrid
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-21
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('event-page', 'event')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.85rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
+                    >
+                      Laker vs Celtics Just Added!
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-8-23
+                    </span>
+                  </div>
+                  <div 
+                    onClick={() => handleModalClick('event-page', 'event')}
+                    className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0 cursor-pointer text-[0.9rem]"
+                  >
+                    <a 
+                      href="#" 
+                      className="text-[#d1d5db] max-w-[70%] truncate transition-colors duration-150 hover:text-[#fc7474fc] text-[1rem]"
+                    >
+                      New Match:Barceiona Vs Real Madridna Vs Real Madrid
+                    </a>
+                    <span className="text-[#6b7280] whitespace-nowrap text-[0.875rem]">
+                      2025-9-21
+                    </span>
+                  </div>
                 </div>
                 <a 
                   href="#" 
-                  className="text-[#c233ea] flex items-center justify-end mt-4 hover:underline"
+                  onClick={() => handleModalClick('account-page', 'event')}
+                  className="text-[#ea3333] flex items-center justify-end mt-4 hover:underline"
                 >
                   MORE <i className="fa fa-angle-right ml-1"></i>
                 </a>
@@ -117,16 +215,18 @@ export default function Footer({ onModalOpen }: FooterProps) {
             </div>
 
             {/* Real-time section */}
-            <div className="border-2 border-[#e2b5fe] border-t-0 rounded-b-lg bg-gray-800/60 shadow-sm">
-              <div className="h-[6px] bg-gradient-to-r from-[#b5dbfe] via-[#fed9fe] to-[#568abe]"></div>
-              <div className="p-3">
-                <h2 className="text-xl font-bold mb-4 items-center text-center">
-                  <i className="fa fa-trophy text-[#c233ea] mr-2"></i>Real-time
+            <div className="relative shadow-sm rounded-b-lg opacity-90" style={{
+              background: '#0a0a0a',
+              border : "3px solid #3b3737",
+            }}>
+              <div className="p-8 bg-black/80 rounded-b-[5px]">
+                <h2 className="text-2xl font-bold mb-4 text-center text-white">
+                  <i className="fa fa-trophy text-[#ea3333] mr-2"></i>Real-time
                 </h2>
                 
-                <div className="h-[250px] overflow-hidden relative">
+                <div className="h-[250px] overflow-hidden relative group">
                   <div 
-                    className="absolute w-full animate-[scrollrealtimes_15s_linear_infinite] hover:[animation-play-state:paused]"
+                    className="absolute w-full group-hover:[animation-play-state:paused]"
                     style={{
                       animation: 'scrollrealtimes 15s linear infinite'
                     }}
@@ -138,16 +238,16 @@ export default function Footer({ onModalOpen }: FooterProps) {
                           className="flex justify-between items-center pt-2 pb-2 border-b border-gray-600/50 last:border-b-0"
                         >
                           <div className="flex items-center">
-                            <span className="text-gray-300 mr-2">{item.name}</span>
+                            <span className="text-[#d1d5db] mr-2">{item.name}</span>
                             <span className={`text-xs px-2 py-1 rounded-full ${item.statusClass}`}>
                               {item.status}
                             </span>
                           </div>
                           <div className="text-right">
-                            <div className="text-[#e2b5fe] text-base font-black">
+                            <div className="text-[#ff9494] text-base font-black">
                               {item.amount}
                             </div>
-                            <div className="text-gray-500 text-xs">
+                            <div className="text-[#6b7280] text-xs">
                               {item.time}
                             </div>
                           </div>
@@ -163,7 +263,7 @@ export default function Footer({ onModalOpen }: FooterProps) {
       </section>
 
       {/* Footer image section */}
-      <section>
+      <section className="mb-8">
         <div className="container mx-auto px-4 flex items-center justify-center">
           <Image 
             src="/images/main/footer.png" 

@@ -27,7 +27,7 @@ export default function DepositContent() {
         <p className="mb-2">* You must deposit under the name you entered when signing up for processing</p>
         <p className="mb-2">* Deposits maybe delayed during bank inspection times.</p>
         <p className="mb-2">
-          * <button className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-1.5 py-0.5 rounded-sm font-black text-xs md:text-sm transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]">
+          * <button className="bg-gradient-to-b from-[#ea6064] via-[#993336] to-[#73171b] px-1.5 py-0.5 rounded-sm font-black text-xs md:text-sm transition-all duration-300 hover:bg-gradient-to-t hover:from-[#73171b] hover:via-[#73171b] hover:to-[#73171b]">
             &nbsp; Account Inquiry &nbsp;
           </button>
         </p>
@@ -47,7 +47,7 @@ export default function DepositContent() {
             type="text"
             value={depositAmount}
             onChange={(e) => setDepositAmount(e.target.value)}
-            className="w-full sm:w-auto px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] text-sm md:text-base"
+            className="w-full sm:w-auto px-3 md:px-4 py-2 bg-black border border-[#73171b] rounded-md focus:outline-none focus:border-[#993336] text-sm md:text-base"
             placeholder="0"
           />
           <div className="mt-2">
@@ -80,7 +80,7 @@ export default function DepositContent() {
           <select
             value={selectedBonus}
             onChange={(e) => setSelectedBonus(e.target.value)}
-            className="w-full px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] text-sm md:text-base"
+            className="w-full px-3 md:px-4 py-2 bg-black border border-[#73171b] rounded-md focus:outline-none focus:border-[#991b1b] text-sm md:text-base"
           >
             <option>Domestic/European/Minigame 10% test</option>
             <option>European/Minigame 5% test</option>
@@ -93,7 +93,7 @@ export default function DepositContent() {
       <div className="mx-auto px-2 md:px-4 flex items-center justify-center gap-1 mt-4">
         <button
           type="submit"
-          className="w-full sm:w-auto bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] text-sm md:text-base"
+          className="w-full sm:w-auto bg-gradient-to-b  from-[#ea6064] via-[#993336] to-[#73171b] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#73171b] hover:via-[#73171b] hover:to-[#73171b] text-sm md:text-base"
         >
           Apply Deposit
         </button>
@@ -134,10 +134,10 @@ export default function DepositContent() {
         <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] cursor-not-allowed opacity-50 text-xs md:text-sm">
           <i className="fa fa-angle-left"></i>
         </button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#c233ea] text-white font-semibold text-xs md:text-sm">1</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">2</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">3</button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#710bad] hover:text-white transition-colors text-xs md:text-sm">
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#993336] text-white font-semibold text-xs md:text-sm">1</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#993336] hover:text-white transition-colors text-xs md:text-sm">2</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#993336] hover:text-white transition-colors text-xs md:text-sm">3</button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-md bg-[#1f2937] text-[#d1d5db] hover:bg-[#993336] hover:text-white transition-colors text-xs md:text-sm">
           <i className="fa fa-angle-right"></i>
         </button>
       </div>

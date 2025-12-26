@@ -56,7 +56,7 @@ export default function QNAContent() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] text-sm md:text-base"
+            className="w-full px-3 md:px-4 py-2 bg-black border border-[#73171b]/50 rounded-md focus:outline-none focus:border-[#73171b] text-sm md:text-base"
           />
         </div>
         <div className="p-2 md:p-3">
@@ -65,7 +65,7 @@ export default function QNAContent() {
             rows={4}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full px-3 md:px-4 py-2 bg-black border border-[#c233ea]/50 rounded-md focus:outline-none focus:border-[#c233ea] text-sm md:text-base resize-none"
+            className="w-full px-3 md:px-4 py-2 bg-black border border-[#73171b]/50 rounded-md focus:outline-none focus:border-[#73171b] text-sm md:text-base resize-none"
           />
         </div>
       </div>
@@ -74,7 +74,7 @@ export default function QNAContent() {
       <div className="mx-auto px-2 md:px-4 flex items-center justify-center gap-1 mt-4">
         <button
           type="submit"
-          className="w-full sm:w-auto bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] text-sm md:text-base"
+          className="w-full sm:w-auto bg-gradient-to-b  from-[#ea6064] via-[#993336] to-[#73171b] px-4 md:px-6 py-2 md:py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#73171b] hover:via-[#73171b] hover:to-[#73171b] text-sm md:text-base"
         >
           Submit
         </button>
