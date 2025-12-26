@@ -10,18 +10,12 @@ interface HeaderProps {
 }
 
 export default function Header({ onModalOpen }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   const handleModalClick = (modalId: string, tab?: string) => {
     if (onModalOpen) {
       onModalOpen(modalId, tab);
-    }
-    
-    // Close mobile menu when opening modals
-    if (modalId === 'account-page' || modalId === 'my-page') {
-      setMobileMenuOpen(false);
     }
     
     // Handle login and register modals
@@ -51,201 +45,197 @@ export default function Header({ onModalOpen }: HeaderProps) {
 
   return (
     <>
-    <header className="z-50 shadow-md transition-all duration-300 bg-transparent pt-4 md:pt-[15px]">
-      <div className="container mx-auto px-4">
-        {/* Top info bar */}
-        <div className="flex flex-wrap justify-end items-center gap-4 text-white font-medium text-[13px] lg:text-[19px] lg:font-bold gap-y-0">
-          <Image 
-            src="/images/level/lv10.png" 
-            alt="Level" 
-            width={24} 
-            height={24}
-            className="h-6 object-cover"
-          />
-          <span 
-            onClick={() => handleModalClick('my-page', 'profile')}
-            className="cursor-pointer"
-          >
-            aaabbb11
-          </span>
-          <span 
-            onClick={() => handleModalClick('account-page', 'deposit')}
-            className="cursor-pointer"
-          >
-            Balance<span className="text-[#c233ea]"> $97,000</span> <i className="fa fa-refresh"></i>
-          </span>
-          <span 
-            onClick={() => handleModalClick('account-page', 'point')}
-            className="cursor-pointer"
-          >
-            Points<span className="text-[#c233ea]"> 80,000</span>P
-          </span>
-          <span 
-            onClick={() => handleModalClick('account-page', 'withdraw')}
-            className="cursor-pointer"
-          >
-            Comps<span className="text-[#c233ea]"> $100,000</span>
-          </span>
-        </div>
-
-        {/* Main header content */}
-        <div className="flex items-center justify-between">
+    <header className="z-50 shadow-md transition-all duration-300 bg-black py-0 md:py-3 border-t border-[#ff9494]" style={{ borderTopWidth: '1px' }}>
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between flex-wrap">
           {/* Logo */}
-          <div className="flex items-center justify-center md:justify-start">
-            <a href="#" className="flex items-center">
+          <div className="flex items-center w-full md:w-auto border-b border-gray-800 md:border-0 md:justify-start justify-center">
+            <a href="#" className="flex items-center py-2 md:py-0 mx-auto md:mx-0">
               <Image 
-                src="/images/main/logo.png" 
+                src="/images/main/logo.png"
                 alt="ToTo Club Logo" 
                 width={200}
-                height={100}
-                className="w-[40%] h-auto md:h-[100px] md:w-auto"
+                height={70}
+                className="w-[40%] h-auto md:w-auto md:h-[70px] mx-auto md:mx-0"
                 priority
               />
             </a>
           </div>
 
           {/* PC menu */}
-          <nav className="hidden md:flex">
+          <nav className="flex relative w-full md:w-auto justify-center text-[10px] md:text-[1.2em]">
             <button 
               onClick={() => handleModalClick('account-page', 'deposit')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
+              className="font-medium text-white m-1 md:m-4 transition-all duration-300 flex items-center justify-center gap-[5px] relative group flex-1 md:flex-none"
             >
-              Deposit
+              <i className="fa fa-rocket text-blue-300 text-xl md:text-base block w-full md:w-auto"></i>
+              <span className="hidden md:inline">DEPOSIT</span>
+              <span className="absolute left-1/2 -translate-x-1/2 h-full border border-[#fde2e2] border-t-0 border-b-0 rounded-[50px] opacity-0 group-hover:opacity-100 transition-all duration-500 w-full group-hover:w-[130%] hidden md:block z-0"></span>
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'withdraw')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
+              className="font-medium text-white m-1 md:m-4 transition-all duration-300 flex items-center justify-center gap-[5px] relative group flex-1 md:flex-none"
             >
-              Withdraw
+              <i className="fa fa-money-bill-wave text-yellow-300 text-xl md:text-base block w-full md:w-auto"></i>
+              <span className="hidden md:inline">WITHDRAW</span>
+              <span className="absolute left-1/2 -translate-x-1/2 h-full border border-[#fde2e2] border-t-0 border-b-0 rounded-[50px] opacity-0 group-hover:opacity-100 transition-all duration-500 w-full group-hover:w-[130%] hidden md:block z-0"></span>
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'point')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
+              className="font-medium text-white m-1 md:m-4 transition-all duration-300 flex items-center justify-center gap-[5px] relative group flex-1 md:flex-none"
             >
-              
-              Point
+              <i className="fa fa-coins text-purple-500 text-xl md:text-base block w-full md:w-auto"></i>
+              <span className="hidden md:inline">POINT</span>
+              <span className="absolute left-1/2 -translate-x-1/2 h-full border border-[#fde2e2] border-t-0 border-b-0 rounded-[50px] opacity-0 group-hover:opacity-100 transition-all duration-500 w-full group-hover:w-[130%] hidden md:block z-0"></span>
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'notice')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
+              className="font-medium text-white m-1 md:m-4 transition-all duration-300 flex items-center justify-center gap-[5px] relative group flex-1 md:flex-none"
             >
-              Notice
+              <i className="fa fa-bullhorn text-red-400 text-xl md:text-base block w-full md:w-auto"></i>
+              <span className="hidden md:inline">NOTICE</span>
+              <span className="absolute left-1/2 -translate-x-1/2 h-full border border-[#fde2e2] border-t-0 border-b-0 rounded-[50px] opacity-0 group-hover:opacity-100 transition-all duration-500 w-full group-hover:w-[130%] hidden md:block z-0"></span>
             </button>
             <button 
               onClick={() => handleModalClick('account-page', 'event')}
-              className="text-xl font-black mx-4 transition-all duration-300 hover:text-[#e2b5fe]"
+              className="font-medium text-white m-1 md:m-4 transition-all duration-300 flex items-center justify-center gap-[5px] relative group flex-1 md:flex-none"
             >
-              Event
+              <i className="fa fa-gift text-green-400 text-xl md:text-base block w-full md:w-auto"></i>
+              <span className="hidden md:inline">EVENT</span>
+              <span className="absolute left-1/2 -translate-x-1/2 h-full border border-[#fde2e2] border-t-0 border-b-0 rounded-[50px] opacity-0 group-hover:opacity-100 transition-all duration-500 w-full group-hover:w-[130%] hidden md:block z-0"></span>
             </button>
           </nav>
 
-          {/* PC buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <button 
-              onClick={() => handleModalClick('login', 'login')}
-              className="border-2 border-[#c233ea] px-6 py-3 rounded-sm font-black text-[#c233ea] transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] hover:text-white"
+          {/* Top info - Desktop only */}
+          <div className="hidden lg:block text-white font-medium text-[14px]">
+            <div 
+              className="w-full flex items-center justify-between gap-2 bg-gray-800 p-1 rounded-[3px] border-t border-[#065254]"
+              style={{
+                background: 'linear-gradient(rgba(61, 89, 137, 0.3), rgba(61, 89, 137, 0.2), rgba(9, 43, 68, 0), rgba(9, 43, 68, 0))'
+              }}
             >
-              Login
-            </button>
-            <button 
-              onClick={() => handleModalClick('register', 'register')}
-              className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]"
+              <Image 
+                src="/images/level/lv10.png" 
+                alt="Level" 
+                width={24} 
+                height={24}
+                className="h-6 object-cover"
+              />
+              <span 
+                onClick={() => handleModalClick('my-page', 'profile')}
+                className="cursor-pointer"
+              >
+                aaabbb11
+              </span>
+              <span 
+                onClick={() => handleModalClick('account-page', 'point')}
+                className="cursor-pointer"
+              >
+                Points<span className="text-[#ea3333]"> 80,000</span>P
+              </span>
+              <span 
+                onClick={() => handleModalClick('account-page', 'withdraw')}
+                className="cursor-pointer"
+              >
+                Comps<span className="text-[#ea3333]"> $100,000</span>
+              </span>
+            </div>
+            <div 
+              className="w-full flex items-center justify-between gap-2 bg-gray-800 p-1 rounded-[3px] border-t border-[#065254]"
+              style={{
+                background: 'linear-gradient(rgba(61, 89, 137, 0.3), rgba(61, 89, 137, 0.2), rgba(9, 43, 68, 0), rgba(9, 43, 68, 0))'
+              }}
             >
-              Register
-            </button>
+              <span 
+                onClick={() => handleModalClick('account-page', 'deposit')}
+                className="cursor-pointer"
+              >
+                Balance<span className="text-[#ea3333]"> $97,000</span> <i className="fa fa-refresh"></i>
+              </span>
+              <div className="flex items-center gap-2 justify-end">
+                <span 
+                  onClick={() => handleModalClick('my-page', 'letter')}
+                  className="bg-red-500 px-2 rounded-md cursor-pointer"
+                >
+                  Letter
+                </span>
+                <span 
+                  onClick={() => window.location.href = '/login'}
+                  className="bg-red-500 px-2 rounded-md cursor-pointer"
+                >
+                  Logout
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden relative group" style={{ marginTop: '-70px', paddingTop: '70px' }}>
             <button 
               type="button" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-gray-100 hover:text-white focus:outline-none absolute top-[10px] right-[20px] z-10"
             >
               <i className="fa fa-bars text-2xl"></i>
             </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        <div className={`md:hidden ${mobileMenuOpen ? '' : 'hidden'} border-gray-800`} style={{
-          backgroundImage: 'url(/images/bg/modal-bg.png)',
-          backgroundSize: '100% auto',
-          backgroundRepeat: 'repeat-y',
-          backgroundPosition: 'center top'
-        }}>
-          <div className="flex space-x-3 pt-2 border-t border-gray-800">
-            <button 
-              onClick={() => handleModalClick('login', 'login')}
-              className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]"
+            {/* Mobile menu */}
+            <div 
+              className="absolute top-[55px] right-0 w-[250px] border border-[#5f1c1c] rounded-[5px] transition-all duration-300 opacity-0 invisible translate-y-[10px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              style={{
+                backgroundImage: 'url(/images/bg/modal-bg.png)',
+                backgroundSize: '100% auto',
+                backgroundRepeat: 'repeat-y',
+                backgroundPosition: 'center top',
+                zIndex: 50
+              }}
             >
-              Login
-            </button>
-            <button 
-              onClick={() => handleModalClick('register', 'register')}
-              className="bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] px-6 py-3 rounded-sm font-black transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d]"
-            >
-              Register
-            </button>
-            <button className="flex-1 border-2 border-[#c233ea] px-6 py-3 rounded-sm font-black text-[#c233ea] transition-all duration-300 hover:bg-gradient-to-t hover:from-[#c233ea] hover:via-[#710bad] hover:to-[#47046d] hover:text-white">
-              Logout
-            </button>
-          </div>
-          <div className="container mx-auto grid grid-cols-2 px-4 py-3 gap-3">
-            <button 
-              onClick={() => handleModalClick('my-page', 'profile')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              My page
-            </button>
-            <button 
-              onClick={() => handleModalClick('my-page', 'letter')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              Letter
-            </button>
-            <button 
-              onClick={() => handleModalClick('my-page', 'qna')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              QNA
-            </button>
-            <button 
-              onClick={() => handleModalClick('my-page', 'history')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              History
-            </button>
-            <button 
-              onClick={() => handleModalClick('account-page', 'deposit')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              Deposit
-            </button>
-            <button 
-              onClick={() => handleModalClick('account-page', 'withdraw')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              Withdraw
-            </button>
-            <button 
-              onClick={() => handleModalClick('account-page', 'point')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              Point
-            </button>
-            <button 
-              onClick={() => handleModalClick('account-page', 'notice')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              Notice
-            </button>
-            <button 
-              onClick={() => handleModalClick('account-page', 'event')}
-              className="w-full text-center py-5 px-2 bg-black/40"
-            >
-              Event
-            </button>
+              <div className="container mx-auto grid px-1 py-3 gap-3">
+                <ul className="space-y-2">
+                  <li 
+                    onClick={() => handleModalClick('my-page', 'profile')}
+                    className="px-1 py-2 border-t border-gray-300 rounded-md flex gap-2 cursor-pointer"
+                  >
+                    aaabbb11
+                    <Image 
+                      src="/images/level/lv10.png" 
+                      alt="Level" 
+                      width={24} 
+                      height={24}
+                      className="h-6"
+                    />
+                  </li>
+                  <li 
+                    onClick={() => handleModalClick('account-page', 'point')}
+                    className="px-1 py-2 border-t border-gray-300 rounded-md cursor-pointer"
+                  >
+                    Points<span className="text-[#ea3333]"> 80,000</span>P
+                  </li>
+                  <li 
+                    onClick={() => handleModalClick('account-page', 'withdraw')}
+                    className="px-1 py-2 border-t border-gray-300 rounded-md cursor-pointer"
+                  >
+                    Comps<span className="text-[#ea3333]"> $100,000</span>
+                  </li>
+                  <li 
+                    onClick={() => handleModalClick('account-page', 'deposit')}
+                    className="px-1 py-2 border-t border-gray-300 rounded-md cursor-pointer"
+                  >
+                    Balance<span className="text-[#ea3333]"> $97,000</span> <i className="fa fa-refresh"></i>
+                  </li>
+                  <li 
+                    onClick={() => handleModalClick('my-page', 'letter')}
+                    className="px-1 py-2 border-t border-gray-300 rounded-md bg-blue-500/20 text-center cursor-pointer"
+                  >
+                    <i className="fa fa-envelope mr-2"></i>LETTER
+                  </li>
+                  <li 
+                    onClick={() => window.location.href = '/login'}
+                    className="px-1 py-2 border-t border-gray-300 rounded-md bg-red-500/20 text-center cursor-pointer"
+                  >
+                    <i className="fa fa-right-from-bracket mr-2"></i>LOGOUT
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -253,14 +243,14 @@ export default function Header({ onModalOpen }: HeaderProps) {
 
     {/* Banner pic */}
     <section className="w-full relative overflow-hidden">
-      <Image 
+      {/* <Image 
         src="/images/main/banner1.png" 
         alt="Banner" 
         width={1920}
         height={400}
         className="w-full object-cover"
         priority
-      />
+      /> */}
     </section>
 
     {/* Modals */}

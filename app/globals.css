@@ -3,12 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Purple theme colors */
-  --color1: #e2b5fe;
-  --color2: #c233ea;
-  --color3: #710bad;
-  --color4: #47046d;
-  --color5: #2a0240;
+  /* Red theme colors */
+  --color1: #ff9494;
+  --color2: #f06363;
+  --color3: #9c3535;
+  --color4: #5f1c1c;
+  --color5: #250a0a;
+  --bg-img1: url('/images/bg/background.jpg');
+  --bg-img2: url('/images/bg/footer_bg.jpg');
 }
 
 @theme inline {
@@ -27,19 +29,16 @@
 }
 
 body {
-  background-image: url('/images/bg/bg.png');
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  background-position: center top;
+  background: var(--bg-img1) no-repeat top, var(--bg-img2) no-repeat bottom;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 body::before {
   content: '';
-  height: 5px;
+  height: 1px;
   display: block;
-  background: linear-gradient(to right, #b5dbfe, #fed9fe, #568abe);
+  background: linear-gradient(to right, var(--color1), var(--color3), var(--color1));
 }
 
 /* Scrollbar styles */
