@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import LoginModal from './login-modal';
 import RegisterModal from './register-modal';
+import Jackpot from "@/components/jackpot";
 
 interface HeaderProps {
   onModalOpen?: (modalId: string, tab?: string) => void;
@@ -12,6 +13,7 @@ interface HeaderProps {
 export default function Header({ onModalOpen }: HeaderProps) {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleModalClick = (modalId: string, tab?: string) => {
     if (onModalOpen) {
@@ -170,7 +172,12 @@ export default function Header({ onModalOpen }: HeaderProps) {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden relative group" style={{ marginTop: '-70px', paddingTop: '70px' }}>
+          <div 
+            className="lg:hidden relative" 
+            style={{ marginTop: '-70px', paddingTop: '70px' }}
+            onMouseEnter={() => setIsMobileMenuOpen(true)}
+            onMouseLeave={() => setIsMobileMenuOpen(false)}
+          >
             <button 
               type="button" 
               className="text-gray-100 hover:text-white focus:outline-none absolute top-[10px] right-[20px] z-10"
@@ -179,7 +186,9 @@ export default function Header({ onModalOpen }: HeaderProps) {
             </button>
             {/* Mobile menu */}
             <div 
-              className="absolute top-[55px] right-0 w-[250px] border border-[#5f1c1c] rounded-[5px] transition-all duration-300 opacity-0 invisible translate-y-[10px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              className={`absolute top-[55px] right-0 w-[250px] border border-[#5f1c1c] rounded-[5px] transition-all duration-300 ${
+                isMobileMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-[10px]'
+              }`}
               style={{
                 backgroundImage: 'url(/images/bg/modal-bg.png)',
                 backgroundSize: '100% auto',
@@ -242,16 +251,73 @@ export default function Header({ onModalOpen }: HeaderProps) {
     </header>
 
     {/* Banner pic */}
-    <section className="w-full relative overflow-hidden">
-      {/* <Image 
-        src="/images/main/banner1.png" 
-        alt="Banner" 
-        width={1920}
-        height={400}
-        className="w-full object-cover"
-        priority
-      /> */}
-    </section>
+    <>
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes floatCycle {
+          0%, 10% {
+            transform: translateX(var(--start-translate)) translateY(0);
+            opacity: 0;
+            left: 50%;
+          }
+          10% {
+            transform: translateX(0) translateY(0);
+            opacity: 1;
+            left: var(--final-left);
+          }
+          15%, 35%, 55%, 75% {
+            transform: translateX(0) translateY(-10px);
+          }
+          20%, 40%, 60%, 80% {
+            transform: translateX(0) translateY(0);
+          }
+          94% {
+            opacity: 1;
+          }
+          95%, 100% {
+            transform: translateX(0) translateY(0);
+            opacity: 0;
+            left: var(--final-left);
+          }
+        }
+      `}} />
+      <section className="w-full relative overflow-hidden flex items-center justify-center">
+        <img 
+          src="/images/main/banner-1.png" 
+          alt="Banner Center" 
+          className="mt-0 md:mt-[50px] w-full left-[-10px] max-w-[60%] h-auto object-contain rounded-lg shadow-lg z-10 lg:w-[580px] lg:h-[480px]"
+        />
+        <img 
+          src="/images/main/banner-left.png" 
+          alt="Banner Left" 
+          className="hidden md:block absolute w-auto h-auto object-contain rounded-lg shadow-lg z-20"
+          style={{
+            '--start-translate': '-100vw',
+            '--final-left': 'calc(50% - 500px)',
+            animation: 'floatCycle 15s ease-in-out infinite',
+            animationDelay: '0s',
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '400px',
+          } as React.CSSProperties & { '--start-translate': string; '--final-left': string }}
+        />
+        <img 
+          src="/images/main/banner-right.png" 
+          alt="Banner Right" 
+          className="hidden md:block absolute w-auto h-auto object-contain rounded-lg shadow-lg z-20"
+          style={{
+            '--start-translate': '100vw',
+            '--final-left': 'calc(50% + 250px)',
+            animation: 'floatCycle 15s ease-in-out infinite',
+            animationDelay: '0.75s',
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '400px',
+          } as React.CSSProperties & { '--start-translate': string; '--final-left': string }}
+        />
+      </section>
+    </>
+
+
 
     {/* Modals */}
     <LoginModal 

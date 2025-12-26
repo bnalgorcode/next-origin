@@ -9,6 +9,7 @@ import SlotGames from "@/components/slot-games";
 import MiniGames from "@/components/mini-games";
 import AccountModal from "@/components/account-modal";
 import MyPageModal from "@/components/my-page-modal";
+import Jackpot from "@/components/jackpot";
 
 type GameCategory = 'casino' | 'slot' | 'mini';
 type AccountTab = 'deposit' | 'withdraw' | 'point' | 'notice' | 'event';
@@ -57,13 +58,17 @@ export default function Home() {
     <>
       <Header onModalOpen={handleModalOpen} />
       
+      {/* Jackpot section */}
+      <Jackpot />
+      
       {/* Game type tab section */}
-      <section className="py-4 sm:py-6 md:py-8">
-        <div className="container mx-auto px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 max-w-full">
+      <section className="pb-8 bg-[#0f1012]">
           <GameTabButtons 
             activeCategory={activeCategory}
             onCategoryChange={setActiveCategory}
           />
+        <div className="sm:px-4 md:px-10 lg:px-15 mx-auto">
+          
 
           <div className="w-full mx-auto">
             {activeCategory === 'casino' && <CasinoGames />}

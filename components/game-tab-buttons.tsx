@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 type GameCategory = 'casino' | 'slot' | 'mini';
 
 interface GameTabButtonsProps {
@@ -9,53 +11,54 @@ interface GameTabButtonsProps {
 
 export default function GameTabButtons({ activeCategory, onCategoryChange }: GameTabButtonsProps) {
   return (
-    <div className="flex flex-wrap justify-center mb-8">
-      <div className="bg-[#2a0240] rounded-2xl p-[0.35em] text-base w-full flex gap-[0.12rem] md:w-auto md:text-2xl md:flex-row">
-        <button
+    <div className="flex flex-wrap justify-center mb-1">
+      <div className="w-full md:flex md:justify-center md:items-center md:w-full md:gap-1">
+        <div
           onClick={() => onCategoryChange('casino')}
-          className={`px-6 py-2 rounded-lg md:rounded-[1.15rem] font-black transition-all duration-300 flex-1 md:flex-none md:w-[200px] ${
-            activeCategory === 'casino'
-              ? 'bg-gradient-to-b from-[#c233ea] via-[#e2b5fe] to-[#c233ea] text-white'
-              : 'bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] hover:text-[#e2b5fe]'
+          className={`transition-all duration-300 cursor-pointer rounded-lg md:rounded-none md:hover:scale-105 ${
+            activeCategory === 'casino' ? 'active' : ''
           }`}
-          style={
-            activeCategory === 'casino'
-              ? { textShadow: '#2a0240 0 0 10px' }
-              : undefined
-          }
         >
-          CASINO
-        </button>
-        <button
+          <Image
+            src="/images/main/tab-casino.png"
+            alt="Casino"
+            sizes = "33vw"
+            width = {33}
+            height = {80}
+            className="w-full max-w-full h-auto md:w-auto md:h-auto"
+          />
+        </div>
+        <div
           onClick={() => onCategoryChange('slot')}
-          className={`px-6 py-2 rounded-lg md:rounded-[1.15rem] font-black transition-all duration-300 flex-1 md:flex-none md:w-[200px] ${
-            activeCategory === 'slot'
-              ? 'bg-gradient-to-b from-[#c233ea] via-[#e2b5fe] to-[#c233ea] text-white'
-              : 'bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] hover:text-[#e2b5fe]'
+          className={`transition-all duration-300 cursor-pointer rounded-lg md:rounded-none md:hover:scale-105 ${
+            activeCategory === 'slot' ? 'active' : ''
           }`}
-          style={
-            activeCategory === 'slot'
-              ? { textShadow: '#2a0240 0 0 10px' }
-              : undefined
-          }
         >
-          SLOT
-        </button>
-        <button
+          <Image
+            src="/images/main/tab-slot.png"
+            alt="Slot"
+            sizes = "33vw"
+            width = {33}
+            height = {80}
+            className="w-full max-w-full h-auto md:w-auto md:h-auto"
+          />
+        </div>
+        <div
           onClick={() => onCategoryChange('mini')}
-          className={`px-6 py-2 rounded-lg md:rounded-[1.15rem] font-black transition-all duration-300 flex-1 md:flex-none md:w-[200px] ${
-            activeCategory === 'mini'
-              ? 'bg-gradient-to-b from-[#c233ea] via-[#e2b5fe] to-[#c233ea] text-white'
-              : 'bg-gradient-to-b from-[#c233ea] via-[#710bad] to-[#47046d] hover:text-[#e2b5fe]'
+          className={`transition-all duration-300 cursor-pointer rounded-lg md:rounded-none md:hover:scale-105 ${
+            activeCategory === 'mini' ? 'active' : ''
           }`}
-          style={
-            activeCategory === 'mini'
-              ? { textShadow: '#2a0240 0 0 10px' }
-              : undefined
-          }
         >
-          MINI
-        </button>
+          <Image
+            src="/images/main/tab-mini.png"
+            alt="Mini"
+            sizes = "33vw"
+            width = {33}
+            height = {80}
+            className="w-full max-w-full h-auto md:w-auto md:h-auto"
+            priority
+          />
+        </div>
       </div>
     </div>
   );
