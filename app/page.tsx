@@ -9,11 +9,13 @@ import SlotGames from "@/components/slot-games";
 import MiniGames from "@/components/mini-games";
 import AccountModal from "@/components/account-modal";
 import MyPageModal from "@/components/my-page-modal";
+import LoginModal from "@/components/login-modal";
 import Jackpot from "@/components/jackpot";
 
 type GameCategory = 'casino' | 'slot' | 'mini';
 type AccountTab = 'deposit' | 'withdraw' | 'point' | 'notice' | 'event';
 type MyPageTab = 'profile' | 'letter' | 'qna' | 'history';
+type LoginTab = 'login' | 'register' | 'consult';
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<GameCategory>('casino');
@@ -21,6 +23,8 @@ export default function Home() {
   const [activeAccountTab, setActiveAccountTab] = useState<AccountTab>('deposit');
   const [isMyPageModalOpen, setIsMyPageModalOpen] = useState(false);
   const [activeMyPageTab, setActiveMyPageTab] = useState<MyPageTab>('profile');
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [activeLoginTab, setActiveLoginTab] = useState<LoginTab>('login');
 
   const handleModalOpen = (modalId: string, tab?: string) => {
     if (modalId === 'account-page' && tab) {
@@ -35,6 +39,10 @@ export default function Home() {
         : 'profile';
       setActiveMyPageTab(validTab);
       setIsMyPageModalOpen(true);
+    } else if (modalId === 'login') {
+      
+      setActiveLoginTab('login');
+      setIsLoginModalOpen(true);
     }
   };
 
@@ -52,6 +60,14 @@ export default function Home() {
 
   const handleMyPageTabChange = (tab: MyPageTab) => {
     setActiveMyPageTab(tab);
+  };
+
+  const handleLoginModalClose = () => {
+    setIsLoginModalOpen(false);
+  };
+
+  const handleLoginTabChange = (tab: LoginTab) => {
+    setActiveLoginTab(tab);
   };
 
   return (
@@ -94,6 +110,14 @@ export default function Home() {
         activeTab={activeMyPageTab}
         onClose={handleMyPageModalClose}
         onTabChange={handleMyPageTabChange}
+      />
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        activeTab={activeLoginTab}
+        onClose={handleLoginModalClose}
+        onTabChange={handleLoginTabChange}
       />
     </>
   );

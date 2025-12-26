@@ -120,7 +120,7 @@ export default function AccountModal({ isOpen, activeTab, onClose, onTabChange }
                 <button
                   key={tab.id}
                   onClick={() => onTabChange(tab.id)}
-                  className={`group relative w-[65px] md:w-[80px] aspect-square rounded-full flex flex-col items-center justify-center transition-all duration-300 border border-[#9c3535] ${
+                  className={`group relative w-[75px] md:w-[95px] aspect-square rounded-full flex flex-col items-center justify-center transition-all duration-300 border border-[#9c3535] ${
                     isActive
                       ? 'text-white'
                       : 'text-[#ff9494]'

@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import LoginModal from './login-modal';
-import RegisterModal from './register-modal';
 import Jackpot from "@/components/jackpot";
 
 interface HeaderProps {
@@ -162,7 +160,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
                   Letter
                 </span>
                 <span 
-                  onClick={() => window.location.href = '/login'}
+                  onClick={() => handleModalClick('login')}
                   className="bg-red-500 px-2 rounded-md cursor-pointer"
                 >
                   Logout
@@ -237,7 +235,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
                     <i className="fa fa-envelope mr-2"></i>LETTER
                   </li>
                   <li 
-                    onClick={() => window.location.href = '/login'}
+                    onClick={() => handleModalClick('login')}
                     className="px-1 py-2 border-t border-gray-300 rounded-md bg-red-500/20 text-center cursor-pointer"
                   >
                     <i className="fa fa-right-from-bracket mr-2"></i>LOGOUT
@@ -320,7 +318,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
 
 
     {/* Modals */}
-    <LoginModal 
+    {/* <LoginModal 
       isOpen={isLoginModalOpen}
       onClose={closeAllModals}
       onSwitchToRegister={switchToRegister}
@@ -329,7 +327,7 @@ export default function Header({ onModalOpen }: HeaderProps) {
       isOpen={isRegisterModalOpen}
       onClose={closeAllModals}
       onSwitchToLogin={switchToLogin}
-    />
+    /> */}
     </>
   );
 }
